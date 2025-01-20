@@ -1,6 +1,5 @@
 <template>
   <div class="flex border rounded-lg p-4 shadow-md gap-4 max-w-[500px] mb-3">
-    <!-- Зображення продукту -->
     <img
       :src="product.thumbnail"
       :alt="product.title"
