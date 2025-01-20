@@ -11,4 +11,5 @@ export interface IProduct {
   body: string;
   availabilityStatus: string;
   shippingInformation: string;
+  thumbnail: string;
 }
