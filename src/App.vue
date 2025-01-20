@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center bg-[#61c0bf]">
+  <div class="flex flex-col items-center justify-center h-[100vh] bg-[#61c0bf]">
     <ProductList />
   </div>
 </template>
