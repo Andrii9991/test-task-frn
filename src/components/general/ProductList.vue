@@ -1,13 +1,13 @@
 <template>
-  <div class="w-[550px]">
+  <div class="w-full max-w-[550px] mx-auto">
     <input
       v-model="searchQuery"
-      class="shadow-md mb-3 p-2 rounded-md"
+      class="shadow-md mb-3 mx-2 p-2 rounded-md"
       placeholder="Search"
       type="text"
     />
     <div
-      class="flex flex-col items-center h-[500px] p-4 rounded-lg justify-start bg-white custom-scrollbar"
+      class="flex flex-col items-center p-4 mx-2 rounded-lg justify-start bg-white custom-scrollbar h-[500px] md:h-[600px]"
       @scroll="handleScroll"
     >
       <transition-group name="fade" tag="div">
@@ -29,7 +29,7 @@ const { filteredProducts, handleScroll, searchQuery } = useVirtualization();
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s;
+  transition: opacity 0.4s;
 }
 
 .fade-enter,
