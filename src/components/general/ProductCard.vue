@@ -1,5 +1,7 @@
 <template>
-  <div class="flex border rounded-lg p-4 shadow-md gap-4 max-w-[500px] mb-3">
+  <div
+    class="flex flex-col items-center md:flex-row md:items-center border rounded-lg md:p-4 p-2 shadow-md gap-4 max-w-[500px] mb-3"
+  >
     <img
       :src="product.thumbnail"
       :alt="product.title"
@@ -9,7 +11,7 @@
     <div class="flex flex-col justify-between flex-1">
       <h3 class="text-lg font-bold">{{ product.title }}</h3>
       <p
-        class="text-gray-600 text-sm whitespace-nowrap overflow-hidden text-ellipsis max-w-[350px]"
+        class="text-gray-600 text-sm sm:whitespace-nowrap overflow-hidden text-ellipsis max-w-[350px]"
       >
         {{ product.description }}
       </p>
