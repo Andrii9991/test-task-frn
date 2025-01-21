@@ -1,20 +1,17 @@
 <template>
-  <div>
-    <!-- Пошуковий запит -->
+  <div class="w-[550px]">
     <input
       v-model="searchQuery"
       class="shadow-md mb-3 p-2 rounded-md"
-      placeholder="Input value for searching"
+      placeholder="Search"
       type="text"
     />
     <div
-      class="flex flex-col items-center h-[500px] p-4 rounded-lg justify-center bg-white"
+      class="flex flex-col items-center h-[500px] p-4 rounded-lg justify-start bg-white custom-scrollbar"
       @scroll="handleScroll"
-      style="overflow-y: auto"
     >
-      <!-- Список продуктів з анімацією -->
       <transition-group name="fade" tag="div">
-        <div v-for="product in filteredProducts" :key="product.id">
+        <div v-for="product in filteredProducts" :key="product.title">
           <ProductCard :product="product" />
         </div>
       </transition-group>
@@ -35,7 +32,28 @@ const { filteredProducts, handleScroll, searchQuery } = useVirtualization();
   transition: opacity 0.3s;
 }
 
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
+}
+
+.custom-scrollbar {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #f3f4f6;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6b7280;
+  border-radius: 10px;
+  border: 2px solid #f3f4f6;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f3f4f6;
 }
 </style>
